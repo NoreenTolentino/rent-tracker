@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rent Tracker | Boarding House Ledger</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#">
+      <span class="brand-mark">R</span>
+      <span class="brand-name">Rent Tracker</span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a class="active" href="#">Ledger</a>
+      <a href="#">Tenants</a>
+      <a href="#">Payments</a>
+      <a href="#">Reminders</a>
+      <a href="#">Reports</a>
+    </nav>
+
+    <div class="rate">
+      <span class="rate-label">Collection rate</span>
+      <strong class="rate-value">52%</strong>
+      <div class="rate-bar"><span style="width: 52%"></span></div>
+      <small>3 of 6 tenants have paid</small>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="page-head">
+      <div>
+        <p class="eyebrow">Boarding house ledger</p>
+        <h1>October 2026</h1>
+      </div>
+      <div class="head-actions">
+        <a class="icon-btn" href="#" aria-label="Previous month">&#8249;</a>
+        <a class="icon-btn" href="#" aria-label="Next month">&#8250;</a>
+        <button class="btn-primary" type="button">Add tenant</button>
+      </div>
+    </header>
+
+    <section class="stats" aria-label="Monthly summary">
+      <article class="stat">
+        <span>Expected</span>
+        <strong>&#8369;20,800</strong>
+      </article>
+      <article class="stat">
+        <span>Collected</span>
+        <strong>&#8369;10,800</strong>
+      </article>
+      <article class="stat stat-dark">
+        <span>Outstanding</span>
+        <strong>&#8369;10,000</strong>
+      </article>
+      <article class="stat">
+        <span>Tenants paid</span>
+        <strong>3 <em>of 6</em></strong>
+      </article>
+    </section>
+
+    <section class="attention" aria-label="Reminders">
+      <h2>Needs attention</h2>
+      <ul>
+        <li>
+          <span class="who"><b>Herobrine</b> Room 2</span>
+          <span class="amount">&#8369;3,200</span>
+          <span class="note late">Overdue by 21 days</span>
+        </li>
+        <li>
+          <span class="who"><b>Creeper</b> Room 4</span>
+          <span class="amount">&#8369;3,000</span>
+          <span class="note late">Overdue by 11 days</span>
+        </li>
+        <li>
+          <span class="who"><b>Enderman</b> Room 5</span>
+          <span class="amount">&#8369;3,800</span>
+          <span class="note due">Due today</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="ledger" aria-label="Tenant ledger">
+      <div class="ledger-head">
+        <h2>Tenant ledger</h2>
+        <div class="tabs" role="radiogroup" aria-label="Filter by status">
+          <input type="radio" name="filter" id="tab-all" checked>
+          <label for="tab-all">All</label>
+          <input type="radio" name="filter" id="tab-paid">
+          <label for="tab-paid">Paid</label>
+          <input type="radio" name="filter" id="tab-unpaid">
+          <label for="tab-unpaid">Unpaid</label>
+          <input type="radio" name="filter" id="tab-overdue">
+          <label for="tab-overdue">Overdue</label>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Tenant</th>
+              <th>Room</th>
+              <th class="num">Rent</th>
+              <th>Due date</th>
+              <th>Status</th>
+              <th>Paid on</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-status="paid">
+              <td data-label="Tenant"><span class="tenant"><i class="avatar">ZB</i><span>Zombie<small>0917 555 0101</small></span></span></td>
+              <td data-label="Room">Room 1</td>
+              <td data-label="Rent" class="num">&#8369;3,500</td>
+              <td data-label="Due date">Oct 5, 2026</td>
+              <td data-label="Status"><span class="pill paid">Paid</span></td>
+              <td data-label="Paid on">Oct 4, 2026</td>
+            </tr>
+            <tr data-status="overdue">
+              <td data-label="Tenant"><span class="tenant"><i class="avatar">HB</i><span>Herobrine<small>0918 555 0102</small></span></span></td>
+              <td data-label="Room">Room 2</td>
+              <td data-label="Rent" class="num">&#8369;3,200</td>
+              <td data-label="Due date">Oct 10, 2026</td>
+              <td data-label="Status"><span class="pill overdue">Overdue</span></td>
+              <td data-label="Paid on">&ndash;</td>
+            </tr>
+            <tr data-status="paid">
+              <td data-label="Tenant"><span class="tenant"><i class="avatar">AL</i><span>Alex<small>0919 555 0103</small></span></span></td>
+              <td data-label="Room">Room 3</td>
+              <td data-label="Rent" class="num">&#8369;4,000</td>
+              <td data-label="Due date">Oct 15, 2026</td>
+              <td data-label="Status"><span class="pill paid">Paid</span></td>
+              <td data-label="Paid on">Oct 14, 2026</td>
+            </tr>
+            <tr data-status="overdue">
+              <td data-label="Tenant"><span class="tenant"><i class="avatar">CR</i><span>Creeper<small>0920 555 0104</small></span></span></td>
+              <td data-label="Room">Room 4</td>
+              <td data-label="Rent" class="num">&#8369;3,000</td>
+              <td data-label="Due date">Oct 20, 2026</td>
+              <td data-label="Status"><span class="pill overdue">Overdue</span></td>
+              <td data-label="Paid on">&ndash;</td>
+            </tr>
+            <tr data-status="due">
+              <td data-label="Tenant"><span class="tenant"><i class="avatar">EN</i><span>Enderman<small>0921 555 0105</small></span></span></td>
+              <td data-label="Room">Room 5</td>
+              <td data-label="Rent" class="num">&#8369;3,800</td>
+              <td data-label="Due date">Oct 31, 2026</td>
+              <td data-label="Status"><span class="pill due">Due today</span></td>
+              <td data-label="Paid on">&ndash;</td>
+            </tr>
+            <tr data-status="paid">
+              <td data-label="Tenant"><span class="tenant"><i class="avatar">VL</i><span>Villager<small>0922 555 0106</small></span></span></td>
+              <td data-label="Room">Room 6</td>
+              <td data-label="Rent" class="num">&#8369;3,300</td>
+              <td data-label="Due date">Oct 25, 2026</td>
+              <td data-label="Status"><span class="pill paid">Paid</span></td>
+              <td data-label="Paid on">Oct 25, 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
